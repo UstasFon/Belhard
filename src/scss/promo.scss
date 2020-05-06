@@ -1,0 +1,25 @@
+@import "vendors/variables";
+@import "./fonts";
+
+.promo {
+  background-image: url("./images/earth.png");
+  background-repeat: no-repeat;
+
+  &_intro {
+    width: 50%;
+    margin-top: 90px;
+  }
+
+  &_title {
+    font-size: 50px;
+    color: $mainTextColor;
+    font-family: OpenSans, sans-serif;
+  }
+
+  &_text {
+    font-size: 20px;
+    color: $mainTextColor;
+    font-family: OpenSans, sans-serif;
+  }
+}
+

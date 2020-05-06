@@ -1,0 +1,94 @@
+@import "vendors/extends";
+@import "vendors/variables";
+@import "fonts";
+
+.header {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  max-width: 40%;
+  &_text {
+    color: $mainTextColor;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 115%;
+    letter-spacing: 0.025em;
+    font-family: RobotoRegular sans-serif;
+
+    &__color {
+      color: $mainGoldenColor;
+    }
+  }
+  &_intro {
+    color: $mainTextColor;
+    letter-spacing: 0.025em;
+    font-size: 13px;
+  }
+}
+
+.nav {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+
+  &_item {
+    display: block;
+    color: $mainTextColor;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: RobotoRegular, sans-serif;
+    text-decoration: none;
+    position: relative;
+
+    &:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $mainTextColor;
+      content: "";
+      transition: width 300ms ease-out;
+    }
+
+    &:hover {
+      color: $mainGoldenColor;
+      transition: 300ms;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}
+
+.colling {
+  display: block;
+  width: 46px;
+  max-width: 46px;
+  height: 46px;
+  border: 2px $mainTextColor solid;
+  border-radius: 50%;
+  padding: 9px;
+
+  &:hover {
+    border: 2px $mainGoldenColor solid;
+    transition: 300ms;
+
+  }
+
+  &_item {
+    margin: 0 auto;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./icons/phone.png");
+
+  }
+}
