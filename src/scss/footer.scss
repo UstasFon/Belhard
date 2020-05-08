@@ -1,0 +1,283 @@
+@import "./_variables";
+@import "./_extends";
+
+.footer {
+  padding: 40px 0 40px 0;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 173px;
+    margin-bottom: 27px;
+    position: relative;
+
+    &:after {
+      content: "";
+      width: 1305px;
+      height: 1px;
+      background-color: #FFFDFD;
+      display: block;
+      margin: 0 auto;
+      position: absolute;
+      bottom: -37px;
+      left: 50px;
+
+      @media (max-width: 568px) {
+        width: 305px;
+        bottom: -15px;
+      }
+    }
+  }
+
+  &_nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 50%;
+
+    @media (max-width: 568px) {
+      display: none;
+    }
+
+    &__item{
+      @extend %maineText;
+      font-size: 16px;
+      margin: 17px;
+
+      &:hover {
+        transition: 300ms;
+        color: $mainGoldenColor;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &_phone {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_button {
+    width: 164px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    background: #08101B;
+    color: $mainTextColor;
+    @extend %maineText;
+    font-size: 15px;
+    margin-bottom: 15px;
+
+    @media (max-width: 414px) {
+      margin: 0 auto;
+    }
+
+    @media (max-width: 320px) {
+      width: 148px;
+    }
+
+    &:hover {
+      transition: 300ms;
+      background-color: $mainGoldenColor;
+      color: #08101B;
+    }
+  }
+
+  &_number {
+    font-family: OpenSans, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.015em;
+    color: $mainTextColor;
+
+    @media (max-width: 320px) {
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+
+  &_requisites {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 64px 0 40px 0;
+
+    @media (max-width: 414px) {
+      margin: 34px 0 20px 0;
+    }
+  }
+
+  &_activity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &_payments {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      margin-top: 20px;
+      justify-content: flex-start;
+    }
+  }
+
+  &_mail {
+    font-family: OpenSans, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.015em;
+    color: $mainTextColor;
+
+    @media (max-width: 568px) {
+      font-size: 10px;
+    }
+
+    @media (max-width: 320px) {
+      padding-top: 16px;
+    }
+  }
+}
+
+.information {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    width: 50%;
+  }
+
+  @media (max-width: 568px) {
+    width: 100%;
+  }
+
+  @media (max-width: 375px) {
+    width: 50%;
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+
+    @media (max-width: 568px) {
+      width: 100%;
+    }
+  }
+
+  &_text {
+    font-family: OpenSans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 126%;
+    text-decoration: none;
+    margin-right: 60px;
+    color: $mainTextColor;
+
+    &:hover {
+      transition: 300ms;
+      color: $mainGoldenColor;
+    }
+
+    &:last-child {
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+.activity_item {
+  font-family: OpenSans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 126%;
+  text-decoration: none;
+  margin-right: 60px;
+  color: $mainTextColor;
+
+  @media (max-width: 568px) {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    transition: 300ms;
+    color: $mainGoldenColor;
+  }
+}
+
+.payments {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &_item__mastercard {
+    display: block;
+    width: 42px;
+    height: 25px;
+    background-image: url("./icons/MasterCard_early_1990s_logo 1.png");
+    background-repeat: no-repeat;
+    margin-right: 26px;
+
+    @media (max-width: 320px) {
+      margin-right: 16px;
+    }
+  }
+
+  &_item__visa {
+    display: block;
+    width: 40px;
+    height: 25px;
+    background-image: url("./icons/visa_PNG3 1.png");
+    background-repeat: no-repeat;
+    margin-right: 26px;
+
+    @media (max-width: 320px) {
+      margin-right: 16px;
+    }
+  }
+
+  &_item__paypal {
+    display: block;
+    width: 75px;
+    height: 20px;
+    background-image: url("./icons/527px-PayPal_logo 1.png");
+    background-repeat: no-repeat;
+  }
+}
+
+.requisites_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media (max-width: 414px) {
+    flex-direction: column;
+    width: 70%;
+  }
+}
+

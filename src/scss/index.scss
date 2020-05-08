@@ -1,8 +1,12 @@
-@import "./vendors/_variables";
-@import "./vendors/_extends";
+@import "./fonts";
 @import "./heder";
 @import "./promo";
-@import "./fonts";
+@import "./reviews";
+@import "./feedback";
+@import "./gallery";
+@import "./contacts";
+@import "./footer";
+@import "./burger";
 
 * {
   box-sizing: border-box;
@@ -12,7 +16,7 @@
 
 .container {
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1450px;
   min-width: 320px;
   padding-right: 15px;
   padding-left: 15px;
@@ -21,4 +25,25 @@
 
 .wrapper {
   background: rgba(2, 4, 18, 1);
+  position: relative;
+
 }
+
+.gradient {
+  background: linear-gradient(327.34deg, rgba(2, 4, 18, 0.97) 39.41%, rgba(2, 4, 18, 0) 75.32%);
+}
+
+.rocket {
+  width: 540px;
+  height: 513px;
+  background-image: url("../../dist/images/img_rocket.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 195px;
+  top: 892px;
+
+  @media (max-width: 768px) {
+    right: 12px;
+  }
+}
+

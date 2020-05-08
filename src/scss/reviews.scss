@@ -1,0 +1,206 @@
+@import "./extends";
+@import "./variables";
+@import "fonts";
+
+.reviews {
+  background-image: url("../../dist/images/moon.png");
+  background-repeat: no-repeat;
+  background-position: right -175px;
+  padding-bottom: 50px;
+
+  &_title {
+    @extend %mediumTitle;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &_text {
+    @extend %maineText;
+    font-size: 20px;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    &:after {
+      @extend %line;
+    }
+  }
+  &_slider {
+    display: flex;
+    flex-direction: row;
+    padding: 29px 97px 0 97px;
+    position: relative;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+
+      @media (max-width: 578px) {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.slider {
+  &_description {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 1024px) {
+      max-width: 100%;
+    }
+  }
+
+  &_text {
+    @extend %maineText;
+    padding: 10px;
+  }
+
+  &_clients {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 70px 15px 0 10px;
+
+    @media (max-width: 1024px) {
+      padding: 20px 15px 0 10px;
+    }
+  }
+
+  &_images {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    width: 100%;
+    position: relative;
+
+    @media (max-width: 1024px) {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 414px) {
+      margin: 10px 0 0 0;
+    }
+
+    &:before {
+      position: absolute;
+      left: 15px;
+      top: 210px;
+      content: "";
+      width: 50px;
+      height: 50px;
+      background-image: url("./icons/bytesize-chevron-left.png");
+      background-repeat: no-repeat;
+      display: block;
+      cursor: pointer;
+
+      @media (max-width: 1024px) {
+        left: -84px;
+        top: 159px;
+      }
+
+      @media (max-width: 414px) {
+        left: 20px;
+        top: 102px;
+      }
+
+      @media (max-width: 414px) {
+        left: -4px;
+        top: 83px;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      top: 210px;
+      right: 15px;
+      content: "";
+      width: 50px;
+      height: 50px;
+      background-image: url("./icons/bytesize-chevron-right.png");
+      background-repeat: no-repeat;
+      display: block;
+      cursor: pointer;
+
+      @media (max-width: 1024px) {
+        right: -64px;
+        top: 159px;
+      }
+      @media (max-width: 414px) {
+        right: 20px;
+        top: 102px;
+      }
+
+      @media (max-width: 414px) {
+        right: -4px;
+        top: 83px;
+      }
+    }
+  }
+}
+
+.clients{
+  &_name {
+   @extend %maineText;
+  }
+
+  &_company {
+    @extend %maineText;
+  }
+}
+
+.images {
+  &_maine {
+    display: block;
+    max-width: 515px;
+    max-height: 379px;
+    background: linear-gradient(269.32deg, #08101B 0.44%, rgba(8, 16, 27, 0) 36.05%), #C4C4C4;
+    border-radius: 3px;
+
+    @media (max-width: 1024px) {
+      margin: 0 auto;
+    }
+
+    @media (max-width: 578px) {
+      max-width: 315px;
+      max-height: 179px;
+    }
+    @media (max-width: 414px) {
+      max-width: 338px;
+      max-height: 248px;
+    }
+
+    @media (max-width: 320px) {
+      max-width: 281px;
+      max-height: 248px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 30px;
+    top: -20px;
+    max-width: 155px;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+}
+
+.sliders{
+  &_slide{
+    width: 123px;
+    height: 131px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+}
+

@@ -40,7 +40,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader', { loader: 'sass-loader', options: {} }]
             },
             {
-                test: /\.(jpg)$/,
+                test: /\.(jpg|png)$/,
                 use: {
                     loader: 'url-loader',
                 },

@@ -1,0 +1,216 @@
+@import "./_variables";
+@import "./_extends";
+@import "fonts";
+
+.gallery {
+  background-image: url("../../dist/images/moon2.png");
+  background-repeat: no-repeat;
+  background-position: right 0;
+  padding-top: 52px;
+
+  @media (max-width: 375px) {
+    padding-top: 22px;
+  }
+
+  &_title {
+    @extend %mediumTitle;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &_text {
+    @extend %maineText;
+    font-size: 20px;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    &:after {
+      @extend %line;
+    }
+  }
+
+  &_images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #08101B;
+    padding: 52px 90px 52px 90px;
+
+    @media (max-width: 414px) {
+      padding: 0;
+    }
+
+    &__maine {
+      overflow: hidden;
+      position: relative;
+      max-width: 579px;
+      max-height: 493px;
+      margin: 10px 10px 0 0;
+
+      @media (max-width: 768px) {
+        max-width: 479px;
+        max-height: 453px;
+      }
+
+      @media (max-width: 568px) {
+        max-width: 418px;
+        max-height: 248px;
+      }
+    }
+
+    &__note {
+      width: 579px;
+      height: 112px;
+      background: rgba(0, 0, 0, 0.65);
+      position: absolute;
+      bottom: -112px;
+    }
+
+    &__text {
+      @extend %maineText;
+      font-size: 18px;
+    }
+
+    &__medium {
+      width: 543px;
+      height: 250px;
+    }
+
+    &__small {
+      &:last-child {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &_slider {
+    margin: 66px 0 77px 0;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 16px;
+      top: 296px;
+      content: "";
+      width: 50px;
+      height: 50px;
+      background-image: url("./icons/bytesize-chevron-left.png");
+      background-repeat: no-repeat;
+      display: block;
+      cursor: pointer;
+
+      @media (max-width: 768px) {
+        left: 33px;
+        top: 274px;
+      }
+      
+      @media (max-width: 568px) {
+        left: 13px;
+        top: 171px;
+      }
+
+      @media (max-width: 414px) {
+        left: -15px;
+        top: 120px;
+      }
+
+      @media (max-width: 375px) {
+        left: -6px;
+        top: 120px;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      top: 296px;
+      right: 16px;
+      content: "";
+      width: 50px;
+      height: 50px;
+      background-image: url("./icons/bytesize-chevron-right.png");
+      background-repeat: no-repeat;
+      display: block;
+      cursor: pointer;
+
+      @media (max-width: 768px) {
+        right: 33px;
+        top: 274px;
+      }
+
+      @media (max-width: 568px) {
+        right: 13px;
+        top: 171px;
+      }
+
+      @media (max-width: 414px) {
+        right: 0;
+        top: 120px;
+      }
+
+      @media (max-width: 375px) {
+        right: -6px;
+        top: 120px;
+      }
+    }
+  }
+
+  &_wrapper {
+    margin: 5px 0 0 0;
+
+    @media (max-width: 1205px) {
+      display: none;
+    }
+  }
+}
+
+.slider {
+  &_bookmarks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.bookmarks {
+  &_item {
+    overflow: hidden;
+    display: block;
+    background: #08101B;
+    font-family: OpenSans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 3px;
+    color: #6B7076;
+    margin-right: 20px;
+    padding: 9px 20px 9px 20px;
+    border-bottom: 1px rgba(181, 183, 187, 0.1) solid;
+
+    &:hover {
+      @extend %maineText;
+      cursor: pointer;
+      transition: 300ms;
+      border-bottom: none;
+    }
+  }
+}
+
+.images_wrapper {
+  overflow: hidden;
+  position: relative;
+
+  &:hover .gallery_images__note {
+    bottom: 4px;
+    transition: bottom 300ms;
+  }
+}

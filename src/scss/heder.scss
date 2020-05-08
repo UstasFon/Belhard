@@ -1,6 +1,6 @@
-@import "vendors/extends";
-@import "vendors/variables";
-@import "fonts";
+@import "./extends";
+@import "./variables";
+@import "./fonts";
 
 .header {
   padding-top: 50px;
@@ -10,14 +10,15 @@
 }
 
 .logo {
-  max-width: 40%;
+  max-width: 100%;
+
   &_text {
     color: $mainTextColor;
     font-size: 20px;
     font-weight: 900;
     line-height: 115%;
     letter-spacing: 0.025em;
-    font-family: RobotoRegular sans-serif;
+    font-family: RobotoRegular, sans-serif;
 
     &__color {
       color: $mainGoldenColor;
@@ -25,26 +26,84 @@
   }
   &_intro {
     color: $mainTextColor;
+    font-family: RobotoRegular, sans-serif;
     letter-spacing: 0.025em;
     font-size: 13px;
   }
 }
 
 .nav {
-  padding-top: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 60%;
+  @media (max-width: 578px) {
+    display: block;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 139px;
+    z-index: -1;
+    margin: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+
+    @media (max-width: 578px) {
+      &.open {
+        height: 180px;
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__list {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+
+    @media (max-width: 578px) {
+      display: flex;
+      flex-direction: row;
+      background-color: $mainGoldenColor;
+      color: #08101B;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    @media (max-width: 414px) {
+      display: flex;
+      flex-direction: column;
+      background-color: $mainGoldenColor;
+      color: #08101B;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
 
   &_item {
+    @extend %maineText;
     display: block;
-    color: $mainTextColor;
     font-size: 18px;
     line-height: 25px;
-    font-family: RobotoRegular, sans-serif;
     text-decoration: none;
     position: relative;
+    margin-right: 35px;
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
+
+    @media (max-width: 578px) {
+      display: block;
+      text-align: center;
+      padding: 5px;
+      font-size: 20px;
+
+      &:after {
+        display: none;
+      }
+    }
 
     &:after {
       display: block;

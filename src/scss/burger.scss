@@ -1,0 +1,52 @@
+@import "./_extends";
+@import "./_variables";
+@import "./fonts";
+
+.burger {
+  display: none;
+  overflow: hidden;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &.open {
+    .burger__item_one {
+      background-color: $mainGoldenColor;
+      transform: rotate(45deg) translateY(21px) translateX(14px);
+    }
+
+    .burger__item_two {
+      background-color: $mainGoldenColor;
+      transform: rotate(495deg) translateX(9px);
+    }
+
+    .burger__item_three {
+      background-color: $mainGoldenColor;
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 578px) {
+    display: flex;
+  }
+
+  &__item {
+    width: 55px;
+    height: 8px;
+    margin-bottom: 10px;
+    background: $mainGoldenColor;
+    border-radius: 4px;
+    transition: all .5s cubic-bezier(.08, .81, .87, .71);
+  }
+}
+
+#span1 {
+  transform-origin: 4px 0;
+}
+
+#span3 {
+  transform-origin: bottom right;
+}

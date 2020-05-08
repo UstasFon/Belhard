@@ -1,25 +1,334 @@
-@import "vendors/variables";
+@import "_variables";
 @import "./fonts";
+@import "./_extends";
 
 .promo {
-  background-image: url("./images/earth.png");
+  background-image: url("../../dist/images/earth.png");
   background-repeat: no-repeat;
+  background-position: right 20px;
+  position: relative;
+
+  &_gradient {
+    background: linear-gradient(327.34deg, rgba(2, 4, 18, 0.97) 39.41%, rgba(2, 4, 18, 0) 75.32%);
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 0 55px 0;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 20px 0 25px 0;
+    }
+  }
 
   &_intro {
     width: 50%;
     margin-top: 90px;
+
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+    }
   }
 
   &_title {
     font-size: 50px;
     color: $mainTextColor;
-    font-family: OpenSans, sans-serif;
+    font-family: OpenSans-Condensed, sans-serif;
+    padding-bottom: 20px;
+    display: block;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    @media (max-width: 414px) {
+      font-size: 30px;
+    }
+
+    &__underline {
+      border-bottom: 3px $mainGoldenColor solid;
+    }
   }
 
   &_text {
     font-size: 20px;
     color: $mainTextColor;
     font-family: OpenSans, sans-serif;
+    padding-bottom: 20px;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &_content {
+    display: block;
+    padding-bottom: 30px;
+
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+
+  &_button {
+    width: 312px;
+    height: 70px;
+    border-radius: 5px;
+    background-color: $mainGoldenColor;
+    border: none;
+    color: #000000;
+    font-family: "OpenSans", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+
+    @media (max-width: 320px) {
+      width: 212px;
+      height: 40px;
+    }
+
+    &:hover {
+      transition: 300ms;
+      border: 3px $mainGoldenColor solid;
+      background-color: #000000;
+      color: $mainTextColor;
+    }
+  }
+
+  &_social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 300px;
+    padding-top: 50px;
+
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+}
+.content {
+  &_item {
+    display: flex;
+    flex-direction: row;
+    @extend %maineText;
+
+    &:before {
+      margin: 9px 5px 0 0;
+      content: "";
+      width: 19px;
+      height: 13px;
+      display: block;
+      background-image: url("./icons/vector.png");
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.social {
+  &_item {
+    width: 28px;
+    height: 28px;
+    display: block;
+    margin-right: 15px;
+
+    &__facebook {
+      background-image: url("./icons/002-facebook.png");
+      background-repeat: no-repeat;
+    }
+
+    &__twitter {
+      background-image: url("./icons/003-twitter.png");
+      background-repeat: no-repeat;
+    }
+
+    &__instagram {
+      background-image: url("./icons/004-instagram.png");
+      background-repeat: no-repeat;
+    }
+
+    &__youtube {
+      background-image: url("./icons/001-youtube.png");
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.advantages {
+  max-width: 70%;
+  padding-bottom: 62px;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    padding-bottom: 0;
+  }
+
+  &:before {
+    content: "";
+    width: 468px;
+    height: 1px;
+    background-color: $mainTextColor;
+    display: block;
+    margin-bottom: 110px;
+
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+
+  &_title {
+    @extend %mediumTitle;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    @media (max-width: 414px) {
+      font-size: 30px;
+    }
+  }
+
+  &_text {
+    font-size: 20px;
+    color: $mainTextColor;
+    font-family: OpenSans, sans-serif;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    &:after {
+      @extend %line;
+    }
+  }
+
+  &_intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 68px 0 71px 0;
+
+    @media (max-width: 768px) {
+      margin: 68px 0 50px 0;
+    }
+
+    &:after {
+      content: "";
+      width: 467px;
+      height: 1px;
+      background-color: $mainTextColor;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.intro {
+  &_item {
+    position: relative;
+    max-width: 386px;
+  }
+}
+
+.item {
+
+  &_experience {
+    padding-left: 75px;
+    margin-bottom: 55px;
+
+    &:before {
+      margin-right: 20px;
+      position: absolute;
+      left: -4px;
+      display: block;
+      content: "";
+      width: 75px;
+      height: 75px;
+      background-image: url("./icons/Group.png");
+      background-repeat: no-repeat;
+
+      @media (max-width: 320px) {
+        left: -1px;
+      }
+    }
+  }
+
+  &_activity {
+    padding-left: 74px;
+    margin-bottom: 55px;
+    &:before {
+      position: absolute;
+      left: -20px;
+      display: block;
+      content: "";
+      width: 75px;
+      height: 75px;
+      background-image: url("./icons/usability.png");
+      background-repeat: no-repeat;
+
+      @media (max-width: 320px) {
+        left: -5px;
+      }
+    }
+  }
+
+  &_service {
+    padding-left: 75px;
+    margin-bottom: 55px;
+
+    &:before {
+      position: absolute;
+      left: -4px;
+      display: block;
+      content: "";
+      width: 75px;
+      height: 75px;
+      background-image: url("./icons/service.png");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &_IT-support {
+    padding-left: 70px;
+    margin-bottom: 55px;
+
+    &:before {
+      position: absolute;
+      left: -26px;
+      display: block;
+      content: "";
+      width: 75px;
+      height: 75px;
+      background-image: url("./icons/003-cms.png");
+      background-repeat: no-repeat;
+
+      @media (max-width: 320px) {
+        left: -13px;
+      }
+    }
+  }
+
+  &_title {
+    font-size: 20px;
+    color: $mainTextColor;
+    font-family: OpenSans-Bold, sans-serif;
+    line-height: 120.68%;
+  }
+
+  &_text {
+    @extend %maineText;
   }
 }
 

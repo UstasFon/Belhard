@@ -1,0 +1,106 @@
+@import "./_extends";
+@import "./_variables";
+@import "./fonts";
+
+.contacts {
+    position: relative;
+    height: 100%;
+    margin-bottom: 40px;
+
+  &_data {
+    max-width: 433px;
+    background-color: #08101B;
+    padding: 40px 45px 47px 45px;
+    position: absolute;
+    top: 68px;
+    left: 226px;
+
+    @media (max-width: 1024px) {
+      padding: 10px 15px 17px 15px;
+      left: 700px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 10px 15px 17px 15px;
+      left: 494px;
+    }
+
+    @media (max-width: 568px) {
+      padding: 5px;
+      top: 146px;
+      left: 339px;
+    }
+
+    @media (max-width: 414px) {
+      padding: 5px;
+      top: 146px;
+      left: 241px;
+    }
+
+    @media (max-width: 320px) {
+      padding: 5px;
+      top: 146px;
+      left: 200px;
+    }
+  }
+
+  &_logo {
+    margin-bottom: 32px;
+    max-width: 41%;
+
+    @media (max-width: 568px) {
+      display: none;
+    }
+  }
+
+  &_text {
+    color: $mainTextColor;
+    font-family: OpenSans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.015em;
+    padding-bottom: 25px;
+    position: relative;
+    margin-left: 47px;
+
+    @media (max-width: 414px) {
+      font-size: 10px;
+      padding-bottom: 15px;
+      margin-left: 37px;
+    }
+
+    @media (max-width: 320px) {
+      padding: 5px;
+      margin-left: 5px;
+    }
+
+    &:before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      display: block;
+      background-image: url("./icons/Ellipse.png");
+      position: absolute;
+      top: 7px;
+      left: -47px;
+
+      @media (max-width: 414px) {
+        left: -27px;
+      }
+
+      @media (max-width: 320px) {
+        display: none;
+      }
+    }
+  }
+
+  &_social {
+     justify-content: flex-end;
+
+    @media (max-width: 414px) {
+      display: none;
+    }
+   }
+}
